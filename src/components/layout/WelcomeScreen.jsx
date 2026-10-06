@@ -2,9 +2,9 @@ import { useEffect, useRef, useState } from 'react';
 import './WelcomeScreen.css';
 
 const LOGO_SRC = import.meta.env.BASE_URL + 'img/icon/ACEUTSC.png';
-const TOTAL_MS = 6000;
-const EXPAND_AT_MS = 3000;
-const EXIT_AT_MS = 5000; 
+const TOTAL_MS = 4000;
+const EXPAND_AT_MS = 1000;
+const EXIT_AT_MS = 3000; 
 
 export default function WelcomeScreen({ onComplete }) {
   const [phase, setPhase] = useState('hold'); // 'hold' | 'expand' | 'exit'
