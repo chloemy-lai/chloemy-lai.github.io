@@ -1,0 +1,123 @@
+.section {
+  width: 100%;
+  height: auto;
+  margin: auto;
+  clear: both;
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 60px;
+}
+
+.skillsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 40px clamp(20px, 5%, 60px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skillItem {
+  width: 100%;
+  max-width: 300px;
+  height: 200px;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 4px;
+  opacity: 0.4;
+  filter: blur(10px);
+  padding: 15px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  animation: spin 10s linear infinite;
+  margin: 0 auto;
+  touch-action: manipulation;
+}
+
+.skillItem::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.02);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: -1;
+}
+
+.skillItem:hover::before,
+.skillItemActive::before,
+.skillItem:global(.in-view)::before {
+  opacity: 1;
+}
+
+.skillItem:hover,
+.skillItemActive,
+.skillItem:global(.in-view) {
+  animation-play-state: paused;
+  cursor: pointer;
+  transform: scale(1.05);
+  opacity: 1;
+  filter: blur(0);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(5px);
+}
+
+.skillTitle {
+  margin: 0;
+  color: #b2b9d1;
+  font-size: 20px;
+  font-weight: 700;
+  transition: all 0.4s ease;
+  z-index: 1;
+  position: relative;
+}
+
+.skillExtra {
+  margin: 8px 10px 0 10px;
+  color: rgba(178, 185, 209, 0.95);
+  font-size: 14px;
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: opacity 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    max-height 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1;
+  line-height: 1.3;
+  position: relative;
+}
+
+.skillItem:hover .skillTitle,
+.skillItemActive .skillTitle {
+  color: white;
+  opacity: 1;
+}
+
+.skillItem:hover .skillExtra,
+.skillItemActive .skillExtra {
+  opacity: 1;
+  max-height: 60px;
+}
+
+/* Original referenced spin but never defined keyframes — keep no-op-safe identity */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}

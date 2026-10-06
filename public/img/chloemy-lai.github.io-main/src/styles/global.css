@@ -1,0 +1,147 @@
+/* Global styles migrated from static style.css — visual parity preserved.
+   Asset paths point at /public (served from site root). */
+
+@font-face {
+  font-family: "title";
+  src: url("/font/Brown-Sugar-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "bodyy";
+  src: url("/font/Ovo-Regular.ttf") format("truetype");
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  max-width: 100%;
+  overflow-x: hidden;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Original used <main> padding; App root plays that role */
+.site-main {
+  padding-top: 200px;
+  min-height: 100%;
+}
+
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+  background-image: linear-gradient(rgba(44, 68, 108, 0.6), rgba(44, 68, 108, 0.6)),
+    url(/img/ocean.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  font-family: "bodyy", Georgia, serif;
+  color: #b2b9d1;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+h1,
+p {
+  transition: filter 0.6s ease, opacity 0.6s ease;
+  filter: blur(8px);
+  opacity: 0.5;
+}
+
+h1.in-view,
+p.in-view {
+  filter: blur(0);
+  opacity: 1;
+}
+
+h1 {
+  font-size: 24pt;
+  font-family: title, Georgia, serif;
+}
+
+h2 {
+  font-size: 18pt;
+  font-family: bodyy, Georgia, serif;
+}
+
+h3 {
+  font-size: 12pt;
+  font-family: bodyy, Georgia, serif;
+  text-decoration: #bec9e5;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+p {
+  font-size: 14pt;
+  font-family: bodyy, Georgia, serif;
+  line-height: 1.4;
+  color:  #b2b9d1;
+}
+
+/* Legacy <font> sizing used in original HTML — preserved via span helpers */
+.font-size-7 {
+  font-size: 7;
+  font-size: xxx-large;
+}
+
+.font-size-6 {
+  font-size: 6;
+  font-size: xx-large;
+}
+
+.font-size-5 {
+  font-size: 5;
+  font-size: x-large;
+}
+
+.font-size-4 {
+  font-size: 4;
+  font-size: large;
+}
+
+.accent-tan {
+  color: #d2b48c;
+}
+
+a.bluebutton:hover {
+  text-decoration: underline;
+  color: white;
+
+}
+
+a.bluebutton {
+  font-size: 10pt;
+  color:  #b2b9d1;
+  font-size: 1.17em;
+  padding: 6px 10px;
+  border-radius: 8px;
+  text-decoration: none;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+a,
+a:link,
+a:visited {
+  color: #b2b9d1;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.countup {
+  font-weight: 700;
+  transition: color 0.4s ease;
+}
+
+.countup.animate {
+  color: #426086;
+}

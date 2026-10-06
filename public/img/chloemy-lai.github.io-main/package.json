@@ -1,0 +1,25 @@
+{
+  "name": "chloe-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Chloe Lai portfolio — React + Vite",
+  "scripts": {
+    "start": "vite",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "clean": "rm -rf dist node_modules/.vite"
+  },
+  "dependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.5.2",
+    "vite": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
